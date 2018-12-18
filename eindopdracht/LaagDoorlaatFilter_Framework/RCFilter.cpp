@@ -34,6 +34,7 @@ void RCFilter::setRCValues(const double R, const double C)
 void RCFilter::getRCValues(double& R, double& C)
 {
 	// TODO: invullen}
+}
 
 double RCFilter::get3dBPoint(void)
 {

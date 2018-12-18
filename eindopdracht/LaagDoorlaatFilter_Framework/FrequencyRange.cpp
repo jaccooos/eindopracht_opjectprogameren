@@ -30,4 +30,4 @@ bool FrequencyRange::setRange(double freqBegin, double freqEnd, unsigned int nPo
 void FrequencyRange::getRange(double& freqBegin, double& freqEnd, unsigned int& nPoints)
 {
 	// TODO: invullen
-
+}
