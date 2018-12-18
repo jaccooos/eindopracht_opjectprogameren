@@ -32,7 +32,7 @@ using namespace std;
 using namespace SimpleXlsx;
 
 ////////////////////////////////////////////////////////////////////////////////
-// function prototypes
+void calculatePoints(double xBegin, double xEnd, unsigned int nPoints, vector<FilterPoint>& Punten);
 // TODO: invullen
 
 
@@ -52,3 +52,26 @@ int mainClass::run()
 	return 0;  // Return from memberfunction, geen fouten
 }
 
+void calculatePoints(double xBegin, double xEnd, unsigned int nPoints, vector<FilterPoint>& Punten)
+{
+	double interval = 1;
+	double offset = 0;
+	double sinvalue = 0;
+	double xvalue = 0;
+	interval = ((xEnd - xBegin) / (nPoints - 1));			// interval berekenen
+
+	cout << "bezig met berekenen...\n";
+	for (int i = 0; i < nPoints; i++)
+	{
+		xvalue = (xBegin + offset);
+		sinvalue = sin(xvalue);
+
+		xValues.push_back(xvalue);
+		sinxValues.push_back(sinvalue);
+
+		offset = offset + interval;
+	}
+	cout << "done\n";
+
+
+}

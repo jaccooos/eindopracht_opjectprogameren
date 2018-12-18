@@ -10,20 +10,28 @@
 
 FilterPoint::FilterPoint()
 {
-	// TODO: invullen
+	this->frequency = 0;
+	this->transfer = 0;
+	this->phase = 0;
 }
 
 FilterPoint::FilterPoint(double frequency, double transfer, double phase) 
 {
-	// TODO: invullen
+	this->frequency = frequency;
+	this->transfer = transfer;
+	this->phase = phase;
 }
 
 void FilterPoint::getFilterPoint(double& frequency, double& transfer, double& phase) 
 {
-	// TODO: invullen
+	frequency = this->frequency;
+	transfer = this->transfer;
+	phase = this->phase;
 }
 
 void FilterPoint::setFilterPoint(double frequency, double transfer, double phase)
 {
-	// TODO: invullen
+	this->frequency = frequency;
+	this->transfer = transfer;
+	this->phase = phase;
 }

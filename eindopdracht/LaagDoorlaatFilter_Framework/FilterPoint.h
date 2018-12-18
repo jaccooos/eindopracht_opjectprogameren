@@ -11,11 +11,17 @@
 
 class FilterPoint
 {
-	// TODO: invullen
-
+private:
+	double frequency;
+	double transfer;
+	double phase;
+	
 
 public:
-	// TODO: invullen
+	FilterPoint();
+	FilterPoint(double frequency, double transfer, double phase);
+	void getFilterPoint(double& frequency, double& transfer, double& phase);
+	void setFilterPoint(double frequency, double transfer, double phase);
 
 };
 
