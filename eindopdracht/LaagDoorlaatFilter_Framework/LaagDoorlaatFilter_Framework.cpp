@@ -11,6 +11,7 @@
 
 #include <string>
 #include <vector>
+#include <math.h>
 
 #include "mainClass.h"
 #include "RCFilter.h"
@@ -24,6 +25,7 @@
 
 #include "ExcelWriter/ExcelWriter.h"
 
+#define PI 3.14159265359
 
 ////////////////////////////////////////////////////////////////////////////////
 // namespaces
@@ -32,7 +34,7 @@ using namespace std;
 using namespace SimpleXlsx;
 
 ////////////////////////////////////////////////////////////////////////////////
-void calculatePoints(double xBegin, double xEnd, unsigned int nPoints, vector<FilterPoint>& Punten);
+void calculatePoints(double fBegin, double fEnd, unsigned int nPoints, double resistor, double capacitor, vector<FilterPoint>& Punten);
 // TODO: invullen
 
 
@@ -52,22 +54,28 @@ int mainClass::run()
 	return 0;  // Return from memberfunction, geen fouten
 }
 
-void calculatePoints(double xBegin, double xEnd, unsigned int nPoints, vector<FilterPoint>& Punten)
+void calculatePoints(double fBegin, double fEnd, unsigned int nPoints, double resistor, double capacitor,  vector<FilterPoint>& Punten)
 {
 	double interval = 1;
 	double offset = 0;
-	double sinvalue = 0;
-	double xvalue = 0;
-	interval = ((xEnd - xBegin) / (nPoints - 1));			// interval berekenen
+	double phaseValue = 0;
+	double transferValue = 0;
+	double frequencyValue = 0;
+	FilterPoint Punt;
+
+	interval = ((fEnd - fBegin) / (nPoints - 1));			// interval berekenen
 
 	cout << "bezig met berekenen...\n";
+
 	for (int i = 0; i < nPoints; i++)
 	{
-		xvalue = (xBegin + offset);
-		sinvalue = sin(xvalue);
+		frequencyValue = (fBegin + offset);
+		phaseValue =(-atanh(2*PI*frequencyValue*resistor*capacitor));
+		transferValue = (1 / (sqrt(1 + pow((2 * PI*frequencyValue), 2)*pow(resistor, 2)*pow(capacitor, 2))));
 
-		xValues.push_back(xvalue);
-		sinxValues.push_back(sinvalue);
+
+		Punt.setFilterPoint(frequencyValue, transferValue, phaseValue);
+		Punten.push_back(Punt);
 
 		offset = offset + interval;
 	}
