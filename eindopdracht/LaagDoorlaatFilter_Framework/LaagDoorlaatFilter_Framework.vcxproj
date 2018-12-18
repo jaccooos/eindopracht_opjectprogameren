@@ -1,0 +1,130 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project DefaultTargets="Build" ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup Label="ProjectConfigurations">
+    <ProjectConfiguration Include="Debug|x64">
+      <Configuration>Debug</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+    <ProjectConfiguration Include="Release|x64">
+      <Configuration>Release</Configuration>
+      <Platform>x64</Platform>
+    </ProjectConfiguration>
+  </ItemGroup>
+  <PropertyGroup Label="Globals">
+    <ProjectGuid>{31a801dc-c2e4-41af-be97-d86c2dad4c33}</ProjectGuid>
+    <Keyword>Win32Proj</Keyword>
+    <RootNamespace>LaagDoorlaatFilter_Framework</RootNamespace>
+    <WindowsTargetPlatformVersion>8.1</WindowsTargetPlatformVersion>
+    <ProjectName>LaagDoorlaatFilter_Framework</ProjectName>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.Default.props" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <UseDebugLibraries>true</UseDebugLibraries>
+    <PlatformToolset>v141</PlatformToolset>
+    <CharacterSet>Unicode</CharacterSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'" Label="Configuration">
+    <ConfigurationType>Application</ConfigurationType>
+    <UseDebugLibraries>false</UseDebugLibraries>
+    <PlatformToolset>v141</PlatformToolset>
+    <WholeProgramOptimization>true</WholeProgramOptimization>
+    <CharacterSet>Unicode</CharacterSet>
+  </PropertyGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.props" />
+  <ImportGroup Label="ExtensionSettings">
+  </ImportGroup>
+  <ImportGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'" Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <ImportGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'" Label="PropertySheets">
+    <Import Project="$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props" Condition="exists('$(UserRootDir)\Microsoft.Cpp.$(Platform).user.props')" Label="LocalAppDataPlatform" />
+  </ImportGroup>
+  <PropertyGroup Label="UserMacros" />
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+    <LinkIncremental>true</LinkIncremental>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+    <LinkIncremental>false</LinkIncremental>
+  </PropertyGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">
+    <ClCompile>
+      <PrecompiledHeader>NotUsing</PrecompiledHeader>
+      <WarningLevel>Level3</WarningLevel>
+      <Optimization>Disabled</Optimization>
+      <PreprocessorDefinitions>WIN32;_DEBUG;_CONSOLE;_LIB;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <SDLCheck>true</SDLCheck>
+      <AdditionalIncludeDirectories>$(SolutionDir)..\ExcelLibrary;$(OPENCV_DIR)\..\..\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+    </ClCompile>
+    <Link>
+      <SubSystem>Console</SubSystem>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <AdditionalLibraryDirectories>$(OPENCV_DIR)\lib;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <AdditionalDependencies>%(AdditionalDependencies)</AdditionalDependencies>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemDefinitionGroup Condition="'$(Configuration)|$(Platform)'=='Release|x64'">
+    <ClCompile>
+      <WarningLevel>Level3</WarningLevel>
+      <PrecompiledHeader>NotUsing</PrecompiledHeader>
+      <Optimization>MaxSpeed</Optimization>
+      <FunctionLevelLinking>true</FunctionLevelLinking>
+      <IntrinsicFunctions>true</IntrinsicFunctions>
+      <PreprocessorDefinitions>WIN32;NDEBUG;_CONSOLE;_LIB;%(PreprocessorDefinitions)</PreprocessorDefinitions>
+      <SDLCheck>true</SDLCheck>
+      <AdditionalIncludeDirectories>$(OPENCV_DIR)\..\..\include;%(AdditionalIncludeDirectories)</AdditionalIncludeDirectories>
+    </ClCompile>
+    <Link>
+      <SubSystem>Console</SubSystem>
+      <GenerateDebugInformation>true</GenerateDebugInformation>
+      <EnableCOMDATFolding>true</EnableCOMDATFolding>
+      <OptimizeReferences>true</OptimizeReferences>
+      <AdditionalLibraryDirectories>$(OPENCV_DIR)\lib;%(AdditionalLibraryDirectories)</AdditionalLibraryDirectories>
+      <AdditionalDependencies>%(AdditionalDependencies)</AdditionalDependencies>
+    </Link>
+  </ItemDefinitionGroup>
+  <ItemGroup>
+    <ClInclude Include="..\..\ExcelLibrary\ExcelWriter\ExcelWriter.h" />
+    <ClInclude Include="..\..\ExcelLibrary\SimpleXLSXWriter\Source\PathManager.hpp" />
+    <ClInclude Include="..\..\ExcelLibrary\SimpleXLSXWriter\Source\UTF8Encoder.hpp" />
+    <ClInclude Include="..\..\ExcelLibrary\SimpleXLSXWriter\Source\XLSXColors\clsRGBColorRecord.h" />
+    <ClInclude Include="..\..\ExcelLibrary\SimpleXLSXWriter\Source\XLSXColors\XLSXColorLib.h" />
+    <ClInclude Include="..\..\ExcelLibrary\SimpleXLSXWriter\Source\Xlsx\Chart.h" />
+    <ClInclude Include="..\..\ExcelLibrary\SimpleXLSXWriter\Source\Xlsx\Chartsheet.h" />
+    <ClInclude Include="..\..\ExcelLibrary\SimpleXLSXWriter\Source\Xlsx\Drawing.h" />
+    <ClInclude Include="..\..\ExcelLibrary\SimpleXLSXWriter\Source\Xlsx\SimpleXlsxDef.h" />
+    <ClInclude Include="..\..\ExcelLibrary\SimpleXLSXWriter\Source\Xlsx\Workbook.h" />
+    <ClInclude Include="..\..\ExcelLibrary\SimpleXLSXWriter\Source\Xlsx\Worksheet.h" />
+    <ClInclude Include="..\..\ExcelLibrary\SimpleXLSXWriter\Source\Xlsx\XlsxHeaders.h" />
+    <ClInclude Include="..\..\ExcelLibrary\SimpleXLSXWriter\Source\XMLWriter.hpp" />
+    <ClInclude Include="..\..\ExcelLibrary\SimpleXLSXWriter\Source\Zip\zip.h" />
+    <ClInclude Include="FilterPoint.h" />
+    <ClInclude Include="FrequencyRange.h" />
+    <ClInclude Include="mainClass.h" />
+    <ClInclude Include="RCFilter.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="..\..\ExcelLibrary\ExcelWriter\ExcelWriter.cpp" />
+    <ClCompile Include="..\..\ExcelLibrary\SimpleXLSXWriter\Source\PathManager.cpp" />
+    <ClCompile Include="..\..\ExcelLibrary\SimpleXLSXWriter\Source\XLSXColors\clsRGBColorRecord.cpp" />
+    <ClCompile Include="..\..\ExcelLibrary\SimpleXLSXWriter\Source\XLSXColors\XLSXColorLib.cpp" />
+    <ClCompile Include="..\..\ExcelLibrary\SimpleXLSXWriter\Source\Xlsx\Chart.cpp" />
+    <ClCompile Include="..\..\ExcelLibrary\SimpleXLSXWriter\Source\Xlsx\Chartsheet.cpp" />
+    <ClCompile Include="..\..\ExcelLibrary\SimpleXLSXWriter\Source\Xlsx\Drawing.cpp" />
+    <ClCompile Include="..\..\ExcelLibrary\SimpleXLSXWriter\Source\Xlsx\Workbook.cpp" />
+    <ClCompile Include="..\..\ExcelLibrary\SimpleXLSXWriter\Source\Xlsx\Worksheet.cpp" />
+    <ClCompile Include="..\..\ExcelLibrary\SimpleXLSXWriter\Source\Xlsx\XlsxHeaders.cpp" />
+    <ClCompile Include="..\..\ExcelLibrary\SimpleXLSXWriter\Source\Zip\zip.cpp" />
+    <ClCompile Include="FilterPoint.cpp" />
+    <ClCompile Include="FrequencyRange.cpp" />
+    <ClCompile Include="LaagDoorlaatFilter_Framework.cpp" />
+    <ClCompile Include="main.cpp" />
+    <ClCompile Include="RCFilter.cpp" />
+  </ItemGroup>
+  <ItemGroup>
+    <Text Include="..\..\ExcelLibrary\SimpleXLSXWriter\Source\Readme.txt" />
+  </ItemGroup>
+  <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
+  <ImportGroup Label="ExtensionTargets">
+  </ImportGroup>
+</Project>
