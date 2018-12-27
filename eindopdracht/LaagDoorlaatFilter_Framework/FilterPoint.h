@@ -15,7 +15,7 @@ private:
 	double frequency;
 	double transfer;
 	double phase;
-	
+
 
 public:
 	FilterPoint();

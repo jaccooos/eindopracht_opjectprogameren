@@ -12,22 +12,30 @@
 
 FrequencyRange::FrequencyRange()
 {
-	// TODO: invullen
+	freqBegin = 1;
+	FreqEnd = 1000;
+	nPoints = 10000;
 }
 
 FrequencyRange::FrequencyRange(double freqBegin, double freqEnd, unsigned int nPoints)
 {
-	// TODO: invullen
+	this->freqBegin = freqBegin;
+	this->freqEnd = freqEnd;
+	this->nPoints = nPoints;
 }
 
 // member functions
 
 bool FrequencyRange::setRange(double freqBegin, double freqEnd, unsigned int nPoints)
 {
-	// TODO: invullen
+	this->freqBegin = freqBegin;
+	this->freqEnd = freqEnd;
+	this->nPoints = nPoints;
 }
 
 void FrequencyRange::getRange(double& freqBegin, double& freqEnd, unsigned int& nPoints)
 {
-	// TODO: invullen
-
+	freqBegin = this->freqBegin;
+	freqEnd = this->freqEnd;
+	nPoints = this->nPoints;
+}

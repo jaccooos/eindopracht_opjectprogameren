@@ -15,14 +15,14 @@ FilterPoint::FilterPoint()
 	this->phase = 0;
 }
 
-FilterPoint::FilterPoint(double frequency, double transfer, double phase) 
+FilterPoint::FilterPoint(double frequency, double transfer, double phase)
 {
 	this->frequency = frequency;
 	this->transfer = transfer;
 	this->phase = phase;
 }
 
-void FilterPoint::getFilterPoint(double& frequency, double& transfer, double& phase) 
+void FilterPoint::getFilterPoint(double& frequency, double& transfer, double& phase)
 {
 	frequency = this->frequency;
 	transfer = this->transfer;
@@ -35,3 +35,4 @@ void FilterPoint::setFilterPoint(double frequency, double transfer, double phase
 	this->transfer = transfer;
 	this->phase = phase;
 }
+

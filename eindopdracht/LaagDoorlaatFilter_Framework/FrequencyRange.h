@@ -13,9 +13,13 @@
 class FrequencyRange
 {
 private:
-	// TODO: invullen
+	double freqBegin = 1;
+	double freqEnd = 1000;
+	unsigned int nPoints = 10000;
 
 public:
-	// TODO: invullen
+	FrequencyRange::FrequencyRange();
+	FrequencyRange::FrequencyRange(double freqBegin, double freqEnd, unsigned int nPoints);
+	bool FrequencyRange::setRange(double freqBegin, double freqEnd, unsigned int nPoints);
+	void FrequencyRange::getRange(double& freqBegin, double& freqEnd, unsigned int& nPoints);
 };
-
