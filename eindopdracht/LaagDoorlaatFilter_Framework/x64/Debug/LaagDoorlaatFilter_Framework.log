@@ -1,31 +1,4 @@
-﻿  FilterPoint.cpp
-c:\users\robin schoonus\documents\github\eindopracht_opjectprogameren\eindopdracht\laagdoorlaatfilter_framework\filterpoint.cpp(12): error C2600: 'FilterPoint::FilterPoint': cannot define a compiler-generated special member function (must be declared in the class first)
-c:\users\robin schoonus\documents\github\eindopracht_opjectprogameren\eindopdracht\laagdoorlaatfilter_framework\filterpoint.cpp(17): error C2511: 'FilterPoint::FilterPoint(double,double,double)': overloaded member function not found in 'FilterPoint'
-  c:\users\robin schoonus\documents\github\eindopracht_opjectprogameren\eindopdracht\laagdoorlaatfilter_framework\filterpoint.h(12): note: see declaration of 'FilterPoint'
-c:\users\robin schoonus\documents\github\eindopracht_opjectprogameren\eindopdracht\laagdoorlaatfilter_framework\filterpoint.cpp(21): error C2039: 'getFilterPoint': is not a member of 'FilterPoint'
-  c:\users\robin schoonus\documents\github\eindopracht_opjectprogameren\eindopdracht\laagdoorlaatfilter_framework\filterpoint.h(12): note: see declaration of 'FilterPoint'
-c:\users\robin schoonus\documents\github\eindopracht_opjectprogameren\eindopdracht\laagdoorlaatfilter_framework\filterpoint.cpp(26): error C2039: 'setFilterPoint': is not a member of 'FilterPoint'
-  c:\users\robin schoonus\documents\github\eindopracht_opjectprogameren\eindopdracht\laagdoorlaatfilter_framework\filterpoint.h(12): note: see declaration of 'FilterPoint'
-  FrequencyRange.cpp
-c:\users\robin schoonus\documents\github\eindopracht_opjectprogameren\eindopdracht\laagdoorlaatfilter_framework\frequencyrange.cpp(14): error C2600: 'FrequencyRange::FrequencyRange': cannot define a compiler-generated special member function (must be declared in the class first)
-c:\users\robin schoonus\documents\github\eindopracht_opjectprogameren\eindopdracht\laagdoorlaatfilter_framework\frequencyrange.cpp(19): error C2511: 'FrequencyRange::FrequencyRange(double,double,unsigned int)': overloaded member function not found in 'FrequencyRange'
-  c:\users\robin schoonus\documents\github\eindopracht_opjectprogameren\eindopdracht\laagdoorlaatfilter_framework\frequencyrange.h(13): note: see declaration of 'FrequencyRange'
-c:\users\robin schoonus\documents\github\eindopracht_opjectprogameren\eindopdracht\laagdoorlaatfilter_framework\frequencyrange.cpp(25): error C2039: 'setRange': is not a member of 'FrequencyRange'
-  c:\users\robin schoonus\documents\github\eindopracht_opjectprogameren\eindopdracht\laagdoorlaatfilter_framework\frequencyrange.h(13): note: see declaration of 'FrequencyRange'
-c:\users\robin schoonus\documents\github\eindopracht_opjectprogameren\eindopdracht\laagdoorlaatfilter_framework\frequencyrange.cpp(30): error C2039: 'getRange': is not a member of 'FrequencyRange'
-  c:\users\robin schoonus\documents\github\eindopracht_opjectprogameren\eindopdracht\laagdoorlaatfilter_framework\frequencyrange.h(13): note: see declaration of 'FrequencyRange'
-  RCFilter.cpp
-c:\users\robin schoonus\documents\github\eindopracht_opjectprogameren\eindopdracht\laagdoorlaatfilter_framework\rcfilter.cpp(17): error C2600: 'RCFilter::RCFilter': cannot define a compiler-generated special member function (must be declared in the class first)
-c:\users\robin schoonus\documents\github\eindopracht_opjectprogameren\eindopdracht\laagdoorlaatfilter_framework\rcfilter.cpp(22): error C2511: 'RCFilter::RCFilter(double,double)': overloaded member function not found in 'RCFilter'
-  c:\users\robin schoonus\documents\github\eindopracht_opjectprogameren\eindopdracht\laagdoorlaatfilter_framework\rcfilter.h(14): note: see declaration of 'RCFilter'
-c:\users\robin schoonus\documents\github\eindopracht_opjectprogameren\eindopdracht\laagdoorlaatfilter_framework\rcfilter.cpp(29): error C2039: 'setRCValues': is not a member of 'RCFilter'
-  c:\users\robin schoonus\documents\github\eindopracht_opjectprogameren\eindopdracht\laagdoorlaatfilter_framework\rcfilter.h(14): note: see declaration of 'RCFilter'
-c:\users\robin schoonus\documents\github\eindopracht_opjectprogameren\eindopdracht\laagdoorlaatfilter_framework\rcfilter.cpp(34): error C2039: 'getRCValues': is not a member of 'RCFilter'
-  c:\users\robin schoonus\documents\github\eindopracht_opjectprogameren\eindopdracht\laagdoorlaatfilter_framework\rcfilter.h(14): note: see declaration of 'RCFilter'
-c:\users\robin schoonus\documents\github\eindopracht_opjectprogameren\eindopdracht\laagdoorlaatfilter_framework\rcfilter.cpp(39): error C2039: 'get3dBPoint': is not a member of 'RCFilter'
-  c:\users\robin schoonus\documents\github\eindopracht_opjectprogameren\eindopdracht\laagdoorlaatfilter_framework\rcfilter.h(14): note: see declaration of 'RCFilter'
-c:\users\robin schoonus\documents\github\eindopracht_opjectprogameren\eindopdracht\laagdoorlaatfilter_framework\rcfilter.cpp(44): error C2039: 'getCharacteristics': is not a member of 'RCFilter'
-  c:\users\robin schoonus\documents\github\eindopracht_opjectprogameren\eindopdracht\laagdoorlaatfilter_framework\rcfilter.h(14): note: see declaration of 'RCFilter'
-c:\users\robin schoonus\documents\github\eindopracht_opjectprogameren\eindopdracht\laagdoorlaatfilter_framework\rcfilter.cpp(49): error C2039: 'getTransfer': is not a member of 'RCFilter'
-  c:\users\robin schoonus\documents\github\eindopracht_opjectprogameren\eindopdracht\laagdoorlaatfilter_framework\rcfilter.h(14): note: see declaration of 'RCFilter'
-  Generating Code...
+﻿  LaagDoorlaatFilter_Framework.cpp
+e:\jacco oostdijk\school\avans\2.2\opject progameeren\eind opdracht\ogp_eindopdracht_framework\eindopracht_opjectprogameren\eindopdracht\laagdoorlaatfilter_framework\laagdoorlaatfilter_framework.cpp(208): warning C4018: '<': signed/unsigned mismatch
+e:\jacco oostdijk\school\avans\2.2\opject progameeren\eind opdracht\ogp_eindopdracht_framework\eindopracht_opjectprogameren\eindopdracht\laagdoorlaatfilter_framework\laagdoorlaatfilter_framework.cpp(146): warning C4715: 'mainClass::run': not all control paths return a value
+  LaagDoorlaatFilter_Framework.vcxproj -> E:\Jacco Oostdijk\School\Avans\2.2\opject progameeren\eind opdracht\OGP_Eindopdracht_Framework\eindopracht_opjectprogameren\eindopdracht\x64\Debug\LaagDoorlaatFilter_Framework.exe

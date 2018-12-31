@@ -37,8 +37,15 @@ void RCFilter::setRCValues(const double resistor, const double capacitor)
 {
 	// TODO: invullen
 
-	this->resistor = resistor;
-	this->capacitor = capacitor;
+	if (resistor != 0)
+	{
+		this->resistor = resistor;
+	}
+	if (capacitor != 0)
+	{
+		this->capacitor = capacitor;
+	}
+		
 }
 
 void RCFilter::getRCValues(double& resistor, double& capacitor)
@@ -54,6 +61,7 @@ double RCFilter::get3dBPoint(void)
 	// TODO: invullen
 
 	db3Point = (1 / (2 * PI * resistor * capacitor));
+	return db3Point; 
 }
 
 void RCFilter::getCharacteristics(double& resistor, double& capacitor, double& db3Point)
@@ -69,7 +77,7 @@ void RCFilter::getTransfer(const double frequency, double& amplitude, double& ph
 {
 	// TODO: invullen
 
-	frequency = 
+
 	amplitude = (1 / (sqrt(1 + pow((2 * PI * frequency), 2) * pow(resistor, 2) * pow(capacitor, 2))));
 	phase = (-atanh(2 * PI * frequency * resistor * capacitor));
 }
