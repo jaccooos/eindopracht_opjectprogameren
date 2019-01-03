@@ -18,8 +18,8 @@ private:
 	unsigned int nPoints = 10000;
 
 public:
-	FrequencyRange::FrequencyRange();
-	FrequencyRange::FrequencyRange(double freqBegin, double freqEnd, unsigned int nPoints);
-	bool FrequencyRange::setRange(double freqBegin, double freqEnd, unsigned int nPoints);
-	void FrequencyRange::getRange(double& freqBegin, double& freqEnd, unsigned int& nPoints);
+	FrequencyRange();
+	FrequencyRange(double freqBegin, double freqEnd, unsigned int nPoints);
+	bool setRange(double freqBegin, double freqEnd, unsigned int nPoints);
+	void getRange(double& freqBegin, double& freqEnd, unsigned int& nPoints);
 };

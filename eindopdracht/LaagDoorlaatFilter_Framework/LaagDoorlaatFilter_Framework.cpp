@@ -47,39 +47,64 @@ int mainClass::run()
 	double capacitor = 0.0001;
 	double startF;
 	double endF;
+
+
 	RCFilter rcfilter;
 	FrequencyRange Range;
 
 	unsigned int keuze = 0;
-	unsigned int nPoints = 100;
+	unsigned int keuzeType = 0;
+	unsigned int nPoints;
 
 	vector<FilterPoint> filterPlot;	// alle punten van het filter voor een bepaalde frequentie	
 	
 	cout << "Laagdoorlaatfilter berekening" << endl;
 
-	while (keuze != 9)
+	while (keuze != 10)
 	{
 		cout << "maak keuze:" << endl;
 		cout << "--- RC filter ---" << endl;
-		cout << "1: geef R" << endl;
-		cout << "2: geef C" << endl;
-		cout << "3: toon filtereigenschappen" << endl;
+		cout << "1: stel type in" << endl;
+		cout << "2: geef R" << endl;
+		cout << "3: geef C" << endl;
+		cout << "4: toon filtereigenschappen" << endl;
 		cout << endl;
 		cout << "--- Plot parameters ---" << endl;				
-		cout << "4: geef beginfrequentie" << endl;
-		cout << "5: geef eindfrequentie" << endl;
-		cout << "6: geef aantal stappen" << endl;
-		cout << "7: toon parameters" << endl;
+		cout << "5: geef beginfrequentie" << endl;
+		cout << "6: geef eindfrequentie" << endl;
+		cout << "7: geef aantal stappen" << endl;
+		cout << "8: toon parameters" << endl;
 		cout << endl;
 		cout << "--- Uitvoeren ---" << endl;
-		cout << "8: bereken karakteristiek" << endl;
-		cout << "9: einde programma" << endl;
+		cout << "9: bereken karakteristiek" << endl;
+		cout << "10: einde programma" << endl;
 
 		cin >> keuze;
 
 		switch (keuze)
 		{
 		case 1:
+
+			
+			cout << "1: Laagdoorlaat filter" << endl;
+			cout << "2: hoogdoorlaat filter" << endl;
+
+			cin >> keuzeType;
+
+			switch (keuzeType)
+			{
+			case 1:
+				rcfilter.setType(false);
+				break;
+			case 2:
+				rcfilter.setType(true);
+				break;
+			default:
+				cout << "ongeldige keuze" << endl;
+				break;
+			}
+			break;
+		case 2:
 			// TODO: waarde inlezen voor R
 			
 			cout << "Voer een waarde in voor R in Ohm: ";
@@ -87,54 +112,72 @@ int mainClass::run()
 			rcfilter.setRCValues(resistor, 0);
 
 			break;
-		case 2:
+		case 3:
 			// TODO: waarde inlezen voor C
 
 			cout << "Voer een waarde in voor C in uF: ";
 			cin >> capacitor;
-			capacitor = capacitor * 0.000001;
+			capacitor = capacitor * 0.000001;		
 			rcfilter.setRCValues(0, capacitor);
 
 			break;
-		case 3:
+		case 4:
 			// TODO: waarden weergeven van filtereigenschappen
 			double kantelpunt;
-			rcfilter.getCharacteristics(resistor, capacitor, kantelpunt);
+			double amplitude;
+			double phase;
+			bool type;
+
+			rcfilter.getCharacteristics(resistor, capacitor, kantelpunt, type);
+			if (type == false)
+			{
+				cout << "type is een laagdoorlaat filter\n";
+			}
+			else if (type == true)
+			{
+				cout << "type is een hoogdoorlaat filter\n";
+			}
 			cout << "weerstands waarde: " << resistor <<"\n";
 			cout << "condensator waarde: " << capacitor <<"\n";
 			cout << "kantelpunt waarde: " << kantelpunt <<"\n";
 
+			rcfilter.getTransfer(kantelpunt, amplitude, phase);
+			cout << "amplitude op het kantelpunt: " << amplitude << "\n";
+			cout << "phase op het kantelpunt: " << phase << "\n";
+
+			
+
 			break;
-		case 4:
+		case 5:
 			// TODO: toon beginfrequentie
 			cout << "Voer een waarde in voor de begin ferqentie in: ";
 			cin >> startF;
 			Range.setRange(startF, 0, 0);
 			break;
-		case 5:
+		case 6:
 			cout << "Voer een waarde in voor de eind ferqentie in: ";
 			cin >> endF;
 			Range.setRange(0, endF, 0);
 			
 			break;
-		case 6:
+		case 7:
 			cout << "Voer een waarde in voor het aantal stappen: ";
 			cin >> nPoints;
 			Range.setRange(0, 0, nPoints);
 
 			break;
-		case 7:
+		case 8:
 			Range.getRange(startF, endF, nPoints);
 
 			cout << "startferquentie: " << startF << "\n";
 			cout << "eindferqentie: " << endF << "\n";
 			cout << "aantal punten: " << nPoints << "\n";
 			break;
-		case 8: 
+		case 9: 
 			calculatePoints(Range, rcfilter, filterPlot);
 			maakPlot(filterPlot, nPoints);
 			break;
-		case 9:
+		case 10:
 			cout << "einde programma" << endl;
 			return 0;
 			break;
@@ -197,7 +240,7 @@ void maakPlot(vector<FilterPoint>& points, unsigned int nPoints)
 	pos_values = points.begin();
 	
 
-	ExcelWriter excelPlot("LCplot.xlsx");
+	ExcelWriter excelPlot("RCplot.xlsx");
 	excelPlot.openWorkbook();
 
 	CWorksheet& sheet_1 = excelPlot.addWorkSheet("datawaarden");
@@ -231,10 +274,14 @@ void maakPlot(vector<FilterPoint>& points, unsigned int nPoints)
 		excelPlot.closeWorkbook();
 		saved = true;
 	}
-
-	while (saved == false)
+	else
 	{
 		cout << "het opslaan is mis gegaan !\n";
+	}
+	/*
+	while (saved == false)
+	{
+		
 		/*
 		cout << "j/n\n";
 		cin >> antwoord;
@@ -254,7 +301,7 @@ void maakPlot(vector<FilterPoint>& points, unsigned int nPoints)
 			excelPlot.closeWorkbook();
 			saved == true;
 		}*/
-	}
+	
 
 	cout << "done\n";
 

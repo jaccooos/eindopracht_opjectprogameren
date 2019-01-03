@@ -20,6 +20,7 @@ RCFilter::RCFilter()
 
 	this->resistor	= 1000;
 	this->capacitor = 0.0001;
+	this->hoogDoorlaat = false;
 }
 
 RCFilter::RCFilter(double resistor, double capacitor)
@@ -28,6 +29,7 @@ RCFilter::RCFilter(double resistor, double capacitor)
 
 	this->resistor	= resistor;
 	this->capacitor = capacitor;
+	this->hoogDoorlaat = false;
 }
 
 
@@ -64,10 +66,10 @@ double RCFilter::get3dBPoint(void)
 	return db3Point; 
 }
 
-void RCFilter::getCharacteristics(double& resistor, double& capacitor, double& db3Point)
+void RCFilter::getCharacteristics(double& resistor, double& capacitor, double& db3Point, bool& type)
 {
 	// TODO: invullen
-
+	type = hoogDoorlaat;
 	resistor  = this->resistor;
 	capacitor = this->capacitor;
 	db3Point = (1 / (2 * PI * resistor * capacitor));
@@ -77,7 +79,20 @@ void RCFilter::getTransfer(const double frequency, double& amplitude, double& ph
 {
 	// TODO: invullen
 
+	if (hoogDoorlaat == false)
+	{
+		amplitude = (1 / (sqrt(1 + pow((2 * PI * frequency), 2) * pow(resistor, 2) * pow(capacitor, 2))));
+		phase = (-atan(2 * PI * frequency * resistor * capacitor));
+	}
+	else if (hoogDoorlaat == true)
+	{
+		amplitude = (resistor / (resistor + (1 / (2 * PI * frequency * capacitor))));
+		phase = (atan(1/(2 * PI * frequency * resistor * capacitor)));
+	}
+	
+}
 
-	amplitude = (1 / (sqrt(1 + pow((2 * PI * frequency), 2) * pow(resistor, 2) * pow(capacitor, 2))));
-	phase = (-atanh(2 * PI * frequency * resistor * capacitor));
+void RCFilter::setType(bool type)
+{
+	hoogDoorlaat = type;
 }

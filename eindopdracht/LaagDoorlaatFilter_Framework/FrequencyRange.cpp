@@ -8,6 +8,7 @@
 
 #include "FrequencyRange.h"
 
+
 // Constructors:
 
 FrequencyRange::FrequencyRange()
@@ -15,6 +16,7 @@ FrequencyRange::FrequencyRange()
 	freqBegin = 1;
 	freqEnd = 1000;
 	nPoints = 10000;
+	
 }
 
 FrequencyRange::FrequencyRange(double freqBegin, double freqEnd, unsigned int nPoints)
@@ -34,21 +36,22 @@ bool FrequencyRange::setRange(double freqBegin, double freqEnd, unsigned int nPo
 	}
 	else
 	{
+		if (freqBegin != 0)
+		{
+			this->freqBegin = freqBegin;
+		}
+		if (freqEnd != 0)
+		{
+			this->freqEnd = freqEnd;
+		}
+		if (nPoints != 0)
+		{
+			this->nPoints = nPoints;
+		}
 		return true;
 	}
 
-	if (freqBegin != 0)
-	{
-		this->freqBegin = freqBegin;
-	}
-	if (freqEnd != 0)
-	{
-		this->freqEnd = freqEnd;
-	}
-	if (nPoints != 0)
-	{
-		this->nPoints = nPoints;
-	}
+	
 	
 }
 
