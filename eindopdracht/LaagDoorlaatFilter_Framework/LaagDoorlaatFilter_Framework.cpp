@@ -89,7 +89,7 @@ int mainClass::run()
 		case 3:
 			// TODO: waarden weergeven van filtereigenschappen
 
-			getRCValues(R, C);
+			getRCValues(resistor, capacitor);
 
 			break;
 		case 4:
