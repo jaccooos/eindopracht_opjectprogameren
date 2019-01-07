@@ -19,7 +19,7 @@ RCFilter::RCFilter()
 	// TODO: invullen
 
 	this->resistor	= 1000;
-	this->capacitor = 0.0001;
+	this->capacitor = 0.00001;
 	this->hoogDoorlaat = false;
 }
 
