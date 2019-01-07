@@ -41,7 +41,7 @@ void maakPlot(vector<FilterPoint>& points, unsigned int nPoints);
 int mainClass::run()
 {
 	double resistor = 1000;
-	double capacitor = 0.0001;
+	double capacitor = 0.00001;
 	double startF;
 	double endF;
 	unsigned int nPoints;

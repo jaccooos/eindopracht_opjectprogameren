@@ -1,8 +1,2 @@
-﻿  FilterPoint.cpp
-  FrequencyRange.cpp
-  LaagDoorlaatFilter_Framework.cpp
-c:\users\robin schoonus\documents\github\eindopracht_opjectprogameren\eindopdracht\laagdoorlaatfilter_framework\laagdoorlaatfilter_framework.cpp(265): warning C4018: '<': signed/unsigned mismatch
-  RCFilter.cpp
-  Generating Code...
-c:\users\robin schoonus\documents\github\eindopracht_opjectprogameren\eindopdracht\laagdoorlaatfilter_framework\laagdoorlaatfilter_framework.cpp(202): warning C4715: 'mainClass::run': not all control paths return a value
+﻿  FrequencyRange.cpp
   LaagDoorlaatFilter_Framework.vcxproj -> C:\Users\Robin Schoonus\Documents\GitHub\eindopracht_opjectprogameren\eindopdracht\x64\Debug\LaagDoorlaatFilter_Framework.exe

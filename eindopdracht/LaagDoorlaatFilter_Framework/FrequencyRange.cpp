@@ -13,9 +13,9 @@
 
 FrequencyRange::FrequencyRange()
 {
-	freqBegin = 0.159155;
-	freqEnd = 15.9155;
-	nPoints = 100;
+	freqBegin = 0;
+	freqEnd = 100;
+	nPoints = 1000;
 }
 
 FrequencyRange::FrequencyRange(double freqBegin, double freqEnd, unsigned int nPoints)
