@@ -46,8 +46,7 @@ void RCFilter::setRCValues(const double resistor, const double capacitor)
 	if (capacitor != 0)
 	{
 		this->capacitor = capacitor;
-	}
-		
+	}	
 }
 
 void RCFilter::getRCValues(double& resistor, double& capacitor)

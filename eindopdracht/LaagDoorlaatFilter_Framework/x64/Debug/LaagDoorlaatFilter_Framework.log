@@ -1,4 +1,8 @@
-﻿  LaagDoorlaatFilter_Framework.cpp
-e:\jacco oostdijk\school\avans\2.2\opject progameeren\eind opdracht\ogp_eindopdracht_framework\eindopracht_opjectprogameren\eindopdracht\laagdoorlaatfilter_framework\laagdoorlaatfilter_framework.cpp(251): warning C4018: '<': signed/unsigned mismatch
-e:\jacco oostdijk\school\avans\2.2\opject progameeren\eind opdracht\ogp_eindopdracht_framework\eindopracht_opjectprogameren\eindopdracht\laagdoorlaatfilter_framework\laagdoorlaatfilter_framework.cpp(189): warning C4715: 'mainClass::run': not all control paths return a value
-  LaagDoorlaatFilter_Framework.vcxproj -> E:\Jacco Oostdijk\School\Avans\2.2\opject progameeren\eind opdracht\OGP_Eindopdracht_Framework\eindopracht_opjectprogameren\eindopdracht\x64\Debug\LaagDoorlaatFilter_Framework.exe
+﻿  FilterPoint.cpp
+  FrequencyRange.cpp
+  LaagDoorlaatFilter_Framework.cpp
+c:\users\robin schoonus\documents\github\eindopracht_opjectprogameren\eindopdracht\laagdoorlaatfilter_framework\laagdoorlaatfilter_framework.cpp(265): warning C4018: '<': signed/unsigned mismatch
+  RCFilter.cpp
+  Generating Code...
+c:\users\robin schoonus\documents\github\eindopracht_opjectprogameren\eindopdracht\laagdoorlaatfilter_framework\laagdoorlaatfilter_framework.cpp(202): warning C4715: 'mainClass::run': not all control paths return a value
+  LaagDoorlaatFilter_Framework.vcxproj -> C:\Users\Robin Schoonus\Documents\GitHub\eindopracht_opjectprogameren\eindopdracht\x64\Debug\LaagDoorlaatFilter_Framework.exe

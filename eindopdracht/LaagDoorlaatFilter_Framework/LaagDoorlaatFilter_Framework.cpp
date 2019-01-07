@@ -11,19 +11,18 @@
 
 #include <string>
 #include <vector>
+#include <iostream>
 
 #include "mainClass.h"
 #include "RCFilter.h"
 #include "FrequencyRange.h"
 #include "FilterPoint.h"
-#include <iostream>
 
 #include <SimpleXLSXWriter/Source/Xlsx/Chart.h>
 #include <SimpleXLSXWriter/Source/Xlsx/Chartsheet.h>
 #include <SimpleXLSXWriter/Source/Xlsx/Workbook.h>
 
 #include "ExcelWriter/ExcelWriter.h"
-
 
 ////////////////////////////////////////////////////////////////////////////////
 // namespaces
@@ -35,8 +34,6 @@ using namespace SimpleXlsx;
 // function prototypes
 void calculatePoints(FrequencyRange& range, RCFilter& rcfilter, vector<FilterPoint>& Punten);
 void maakPlot(vector<FilterPoint>& points, unsigned int nPoints);
-// TODO: invullen
-
 
 ////////////////////////////////////////////////////////////////////////////////
 // memberfunction run()
@@ -47,14 +44,13 @@ int mainClass::run()
 	double capacitor = 0.0001;
 	double startF;
 	double endF;
-
+	unsigned int nPoints;
 
 	RCFilter rcfilter;
 	FrequencyRange Range;
 
 	unsigned int keuze = 0;
 	unsigned int keuzeType = 0;
-	unsigned int nPoints;
 
 	vector<FilterPoint> filterPlot;	// alle punten van het filter voor een bepaalde frequentie	
 	
@@ -84,9 +80,9 @@ int mainClass::run()
 		switch (keuze)
 		{
 		case 1:
+			// TODO: type filter kiezen
 
-			
-			cout << "1: Laagdoorlaat filter" << endl;
+			cout << "1: laagdoorlaat filter" << endl;
 			cout << "2: hoogdoorlaat filter" << endl;
 
 			cin >> keuzeType;
@@ -131,62 +127,79 @@ int mainClass::run()
 			rcfilter.getCharacteristics(resistor, capacitor, kantelpunt, type);
 			if (type == false)
 			{
-				cout << "type is een laagdoorlaat filter\n";
+				cout << "Type is een laagdoorlaat filter\n";
 			}
 			else if (type == true)
 			{
-				cout << "type is een hoogdoorlaat filter\n";
+				cout << "Type is een hoogdoorlaat filter\n";
 			}
-			cout << "weerstands waarde: " << resistor <<"\n";
-			cout << "condensator waarde: " << capacitor <<"\n";
-			cout << "kantelpunt waarde: " << kantelpunt <<"\n";
+			cout << "Weerstands waarde: " << resistor <<"\n";
+			cout << "Condensator waarde: " << capacitor <<"\n";
+			cout << "Kantelpunt waarde: " << kantelpunt <<"\n";
 
 			rcfilter.getTransfer(kantelpunt, amplitude, phase);
-			cout << "amplitude op het kantelpunt: " << amplitude << "\n";
-			cout << "phase op het kantelpunt: " << phase << "\n";
-
-			
+			cout << "Amplitude op het kantelpunt: " << amplitude << "\n";
+			cout << "Phase op het kantelpunt: " << phase << "\n";
 
 			break;
 		case 5:
-			// TODO: toon beginfrequentie
+			// TODO: beginfrequentie invoeren
+
 			cout << "Voer een waarde in voor de begin ferqentie in: ";
 			cin >> startF;
 			Range.setRange(startF, 0, 0);
+
 			break;
 		case 6:
+			// TODO: eindfrequentie invoeren
+
 			cout << "Voer een waarde in voor de eind ferqentie in: ";
 			cin >> endF;
 			Range.setRange(0, endF, 0);
 			
 			break;
 		case 7:
+			// TODO: aantal stappen invoeren van de frequentierange
+
 			cout << "Voer een waarde in voor het aantal stappen: ";
 			cin >> nPoints;
 			Range.setRange(0, 0, nPoints);
 
 			break;
 		case 8:
+			// TODO: toon parameters
+
 			Range.getRange(startF, endF, nPoints);
 
-			cout << "startferquentie: " << startF << "\n";
-			cout << "eindferqentie: " << endF << "\n";
-			cout << "aantal punten: " << nPoints << "\n";
+			cout << "Startferquentie: " << startF << "\n";
+			cout << "Eindferqentie: " << endF << "\n";
+			cout << "Aantal punten: " << nPoints << "\n";
+
 			break;
 		case 9: 
+			// TODO: plotten
+
 			calculatePoints(Range, rcfilter, filterPlot);
 			maakPlot(filterPlot, nPoints);
+
 			break;
 		case 10:
+			// TODO: programma afsluiten
+
 			cout << "einde programma" << endl;
 			return 0;
+
 			break;
 		default:
+			// TODO: default
+
 			cout << "ongeldige keuze" << endl;
+
 			break;
 		}
 	}
 }
+
 void calculatePoints(FrequencyRange& range, RCFilter& rcfilter, vector<FilterPoint>& Punten)
 {
 	double interval = 1;
@@ -304,6 +317,4 @@ void maakPlot(vector<FilterPoint>& points, unsigned int nPoints)
 	
 
 	cout << "done\n";
-
-
 }

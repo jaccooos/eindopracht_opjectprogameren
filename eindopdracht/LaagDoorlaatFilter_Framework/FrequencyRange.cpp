@@ -13,10 +13,9 @@
 
 FrequencyRange::FrequencyRange()
 {
-	freqBegin = 1;
-	freqEnd = 1000;
-	nPoints = 10000;
-	
+	freqBegin = 0.159155;
+	freqEnd = 15.9155;
+	nPoints = 100;
 }
 
 FrequencyRange::FrequencyRange(double freqBegin, double freqEnd, unsigned int nPoints)
@@ -50,9 +49,6 @@ bool FrequencyRange::setRange(double freqBegin, double freqEnd, unsigned int nPo
 		}
 		return true;
 	}
-
-	
-	
 }
 
 void FrequencyRange::getRange(double& freqBegin, double& freqEnd, unsigned int& nPoints)

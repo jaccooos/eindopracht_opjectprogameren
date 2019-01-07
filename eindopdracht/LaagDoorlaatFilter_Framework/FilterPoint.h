@@ -22,6 +22,5 @@ public:
 	FilterPoint(double frequency, double transfer, double phase);
 	void getFilterPoint(double& frequency, double& transfer, double& phase);
 	void setFilterPoint(double frequency, double transfer, double phase);
-
 };
 
