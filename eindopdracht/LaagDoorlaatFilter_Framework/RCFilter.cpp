@@ -2,8 +2,8 @@
 // TITLE        RCFilter
 // DESCRIPTION	Klasse implementatie voor de RCFilter klasse
 // FILE			RCFilter.cpp
-// AUTHOR		R. Smeets
-// DATE			10-aug-2018
+// AUTHOR		R. Schoonus en J.C. Oostdijk
+// DATE			9-01-2019
 // ***************************************************************************
 
 #define _USE_MATH_DEFINES
@@ -59,15 +59,14 @@ void RCFilter::getRCValues(double& resistor, double& capacitor)
 
 double RCFilter::get3dBPoint(void)
 {
-	// TODO: invullen
-
+	
 	db3Point = (1 / (2 * PI * resistor * capacitor));
 	return db3Point; 
 }
 
 void RCFilter::getCharacteristics(double& resistor, double& capacitor, double& db3Point, bool& type)
 {
-	// TODO: invullen
+	
 	type = hoogDoorlaat;
 	resistor  = this->resistor;
 	capacitor = this->capacitor;
@@ -76,8 +75,8 @@ void RCFilter::getCharacteristics(double& resistor, double& capacitor, double& d
 
 void RCFilter::getTransfer(const double frequency, double& amplitude, double& phase)
 {
-	// TODO: invullen
-
+	
+	//afhankelijk van het type de juiste berekeningen
 	if (hoogDoorlaat == false)
 	{
 		amplitude = (1 / (sqrt(1 + pow((2 * PI * frequency), 2) * pow(resistor, 2) * pow(capacitor, 2))));

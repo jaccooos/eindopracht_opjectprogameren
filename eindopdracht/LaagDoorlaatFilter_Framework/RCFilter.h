@@ -3,8 +3,8 @@
 // TITLE        RCFilter
 // DESCRIPTION	Klassedefinitie voor een RC filter
 // FILE			RCFilter.h
-// AUTHOR		R. Smeets
-// DATE			11-aug-2018
+// AUTHOR		R. Schoonus en J.C. Oostdijk
+// DATE			9-01-2019
 // ***************************************************************************
 
 #pragma once

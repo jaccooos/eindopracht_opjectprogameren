@@ -2,8 +2,8 @@
 // TITLE        FrequencyRange
 // DESCRIPTION	Klasse implementatie voor de FrequencyRange klasse
 // FILE			FrequencyRange.cpp
-// AUTHOR		R. Smeets
-// DATE			10-aug-2018
+// AUTHOR		R. Schoonus en J.C. Oostdijk
+// DATE			9-01-2019
 // ***************************************************************************
 
 #include "FrequencyRange.h"

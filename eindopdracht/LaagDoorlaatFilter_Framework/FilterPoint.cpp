@@ -2,8 +2,8 @@
 // TITLE        FilterPoint
 // DESCRIPTION	Klasse implementatie voor de FilterPoint klasse
 // FILE			FilterPoint.cpp
-// AUTHOR		R. Smeets
-// DATE			10-aug-2018
+// AUTHOR		R. Schoonus en J.C. Oostdijk
+// DATE			9-01-2019
 // ***************************************************************************
 
 #include "FilterPoint.h"
